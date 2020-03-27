@@ -1,0 +1,127 @@
+
+
+body {
+	font-family: sans-serif;
+	background: #f3f5f2;
+	background-image: url('corona.jpg');
+	background-position: 
+}
+
+
+.background-img {
+	opacity: 1;
+	right: 0;
+	top: 0;
+	z-index: -1;
+	position: fixed;
+}
+
+
+
+.container {
+	width: 70%;
+	margin: 3rem auto;
+}
+
+.content {
+	background-color: rgba(255,255,255,0.8);
+	padding: 2rem 4rem;
+	border-radius: 5px;
+	margin: 3rem 0;
+	text-align: justify;
+	line-height: 1.5rem;
+}
+
+.content:after {
+	content: '';
+	display: block;
+	clear:both;
+}
+
+
+.align-right {
+	float: right;
+	width: 300px;
+}
+
+p
+{
+    color: grey;
+}
+
+h1 {
+	font-family: 'Sen', sans-serif;
+	font-size: 4rem;
+}
+
+h1, em
+{
+	color: #A80F21;
+}
+
+h2 {
+	font-family: 'Sen', sans-serif;
+	font-size: 2rem;
+	color: #A80F21;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+
+
+
+.footer {
+	text-align: center;
+	padding: 2rem;
+}
+
+.message_holder {
+	margin: 1rem;
+	width: 70%;
+	margin: 0 auto;
+	padding: 2rem 0;
+}
+
+.message {
+	margin: 1rem 0;
+}
+.message span {
+	display: inline-block;
+	max-width: 60%;
+}
+.message.bot {
+	text-align: right;
+}
+
+.message.bot span {
+	background: #60BEB3;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	color: #fff;
+	text-align: left;
+}
+
+.message.user {
+	text-align: left;
+}
+
+.message.user span {
+	background: #EBC2BE;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	color: #40111B;
+}
+
+.form {
+	text-align: center;
+}
+.form input {
+	border-radius: 5px;
+	padding: 5px;
+	box-shadow: none;
+	-webkit-appearance: none;
+	border-style: solid;
+}
