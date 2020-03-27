@@ -37,6 +37,7 @@ def handle_message(data, methods=['GET', 'POST']):
     json_object = json.loads(json_str) # json -> dict
     user = json_object['username'] # récup nom utilisateur
     message = json_object['message'] # récup message de l'utilisateur
+    print(message)
 
     # envoi d'abord le message de l'utilisateur a afficher  div.message_holder
     # if (data.is_bot) = False  

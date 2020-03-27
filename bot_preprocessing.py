@@ -15,12 +15,16 @@ def tokens():
     raw=raw.lower()# converts to lowercase
     # quelques modifications : 
     raw = re.sub(r"n.c.a.", "", raw)
-    raw = re.sub(r"\ufeff", "", raw)
-    raw = re.sub(r"\[.{1,2}\]", "", raw)
+    raw = re.sub(r"covid.*", "coronavirus", raw)
+    raw = re.sub(r"\n", " ", raw)
     # Création d'une liste de phrases (= tokenization)
-    nltk.download('punkt') # first-time use only
-    nltk.download('wordnet') # first-time use only
     sent_tokens = nltk.sent_tokenize(raw)
+    i = 1
+    for n in range(len(sent_tokens)):
+        a = len(sent_tokens)- i
+        if (re.search("\?", sent_tokens[a])):
+            del sent_tokens[a]
+        i += 1
     return sent_tokens
 
 def matrix_tfidf(sent_tokens):
