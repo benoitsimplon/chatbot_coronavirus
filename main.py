@@ -2,9 +2,13 @@ from flask import Flask, render_template
 from subprocess import check_output
 check_output(['pip','install','flask_socketio'])
 from flask_socketio import SocketIO
-import botiful
 import json
+import botiful # hand made
+import bot_preprocessing # hand made 
+import corobot # hand made
 
+sent_tokens = bot_preprocessing.tokens()
+phrases_tf, tfidf = bot_preprocessing.matrix_tfidf(sent_tokens)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
@@ -41,7 +45,8 @@ def handle_message(data, methods=['GET', 'POST']):
     #if (data.is_bot)  == TRUE
     #div class="message bot"
     # réponse du bot
-    bot_response = botiful.reponse_bot(user, message)
+    bot_response = corobot.bot_reponse(message, phrases_tf, sent_tokens, user, tfidf)
+    # bot_response = botiful.reponse_bot(user, message)
     # ajout is_bot dans json, affiche jquery différent si bot 
     response = {
         'is_bot': True,
